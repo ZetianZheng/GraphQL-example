@@ -55,4 +55,10 @@ public class Mutation implements GraphQLMutationResolver {
         }
 
     }
+
+    public Dog addDog(String name, String breed, String origin) {
+        Dog dog = new Dog(name, breed, origin);
+        dogRepository.save(dog);
+        return dog;
+    }
 }
